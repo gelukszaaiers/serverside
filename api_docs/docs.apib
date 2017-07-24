@@ -1,0 +1,65 @@
+FORMAT: 1A
+HOST: https://gelukzoekers-api.herokuapp.com/api
+
+# Gelukzoekers API
+
+API for the Gelukzoekers app.
+
+JSON format following JSONApi guidelines (http://jsonapi.org)
+
+## Seeds Collection [/seeds]
+
+### List All Seeds [GET]
+
+Shows all seeds available
+
++ Response 200 (application/json)
+
+        {
+            data: [
+                {
+                    "type": "seeds",
+                    "id": "f13b58fd-f873-4f59-b641-066c4e9c9c35",
+                    "attributes": {
+                        "title": "Op de koffie met Joost",
+                        "description": "Elke dag van 14:00 uur mag je op de koffie komen",
+                        "addedOn": "2017-07-19T11:47:22.252Z"
+                    },
+                    "relationships": {
+                        "owner": {
+                            {
+                                "id": "5ef3f7e6-70b7-480f-9f8f-ad2502185bd0",
+                                "type": "owners"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "1fba9255-8e2f-4b75-b1df-394101fc7449",
+                    "type": "seeds",
+                    "attributes": {
+                        "title": "GSM opladenk",
+                        "description": "GSM plat? Bel maar aan en laad je GSM op bij mij in de living",
+                        "addedOn": "2017-07-19T11:47:22.252Z"
+                    },
+                    "relationships": {
+                        "owner": {
+                            {
+                                "id": "5ef3f7e6-70b7-480f-9f8f-ad2502185bd0",
+                                "type": "owners"
+                            }
+                        }
+                    }
+                }
+            ],
+             "included": [
+                {
+                    "id": "5ef3f7e6-70b7-480f-9f8f-ad2502185bd0",
+                    "type": "owners",
+                    "attributes": {
+                        "fullName": "Joske Vermeulen",
+                        "mobile": "+324777345289"
+                    }
+                }
+            ]
+        }

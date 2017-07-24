@@ -1,0 +1,12 @@
+version: '2'
+services:
+  postgres:
+    image: sameersbn/postgresql
+    ports:
+    - "5432:5432"
+    environment:
+      - DB_USER=test
+      - DB_PASS=test
+      - DB_NAME=project_test,project_dev
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data

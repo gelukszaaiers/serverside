@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }]
+  },
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "plugins": [
+    "promise"
+  ],
+  "globals": {
+    "expect": false,
+    "diContainer": false
+  }
+}
