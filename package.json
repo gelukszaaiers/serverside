@@ -1,0 +1,80 @@
+{
+  "name": "gelukszoekers-backend",
+  "version": "1.0.0",
+  "description": "back end of the gelukszaaiers application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js ",
+    "start:watch": "nodemon index.js",
+    "debug": "NODE_PATH=$NODE_PATH:./lib node --debug-brk index.js",
+    "test": "NODE_ENV=test node_modules/.bin/nyc _mocha test/",
+    "lint": "node_modules/.bin/eslint ./src",
+    "lint:fix": "node_modules/.bin/eslint --fix ./src",
+    "coverage": "node_modules/.bin/istanbul cover _mocha test/",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gelukszaaiers/serverside.git"
+  },
+  "constributors": [
+    {
+      "name": "Samuel Overloop",
+      "email": "samuel.overloop@gmail.com"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gelukszaaiers/serverside/issues"
+  },
+  "homepage": "https://github.com/gelukszaaiers/serverside#readme",
+  "engines": {
+    "node": "8.1.x",
+    "npm": "5.0.x"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-mocha": "^4.9.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0",
+    "nyc": "^11.1.0"
+  },
+  "dependencies": {
+    "aglio": "^2.3.0",
+    "awilix": "^2.6.0",
+    "body-parser": "^1.17.1",
+    "dotenv-safe": "^4.0.4",
+    "errorhandler": "^1.5.0",
+    "express": "^4.15.2",
+    "express-winston": "^2.3.0",
+    "helmet": "^3.8.0",
+    "pg": "^7.0.2",
+    "sequelize": "^4.4.2",
+    "sequelize-cli": "^2.7.0",
+    "winston": "^2.3.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80,
+    "statements": 80,
+    "functions": 80,
+    "branches": 80,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "require": [],
+    "extension": [],
+    "cache": true,
+    "all": true,
+    "report-dir": "./coverage"
+  }
+}

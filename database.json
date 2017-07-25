@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "test",
+    "password": "test",
+    "database": "project_dev",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging": false,
+    "native": false,
+    "pool": { "maxConnections": 5, "minConnections": 0, "maxIdleTime": 3000 }
+  },
+  "test": {
+    "username": "test",
+    "password": "test",
+    "database": "project_test",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
+    "logging": false
+  }
+}
